@@ -1,0 +1,27 @@
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\threading.py", line 917, in run      
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\user\Downloads\FYP_dashboard\backend\main_fastSAM.py", line 347, in camera_worker
+    results = model.predict(
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\ultralytics\models\fastsam\model.py", line 74, in predict
+    return super().predict(source, stream, prompts=prompts, **kwargs)
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\ultralytics\engine\model.py", line 555, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\ultralytics\engine\predictor.py", line 227, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Result into one
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\torch\utils\_contextlib.py", line 36, in generator_context
+    response = gen.send(None)
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\ultralytics\engine\predictor.py", line 337, in stream_inference
+    self.results = self.postprocess(preds, im, im0s)
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\ultralytics\models\fastsam\predict.py", line 76, in postprocess
+    return self.prompt(results, bboxes=bboxes, points=points, labels=labels, texts=texts)
+  File "c:\Users\user\Downloads\FYP_dashboard\.venv\lib\site-packages\ultralytics\models\fastsam\predict.py", line 145, in prompt
+    text_idx += (torch.tensor(filter_idx, device=self.device)[None] <= int(text_idx)).sum(0)
+ValueError: only one element tensors can be converted to Python scalars
+2025-07-04 16:23:36,357 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8018393402:AAFHD6e25_0ijR26KrtObn4voDqEc9yW93w/getUpdates "HTTP/1.1 200 OK"
+2025-07-04 16:23:46,545 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8018393402:AAFHD6e25_0ijR26KrtObn4voDqEc9yW93w/getUpdates "HTTP/1.1 200 OK"
+2025-07-04 16:23:56,727 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8018393402:AAFHD6e25_0ijR26KrtObn4voDqEc9yW93w/getUpdates "HTTP/1.1 200 OK"
+2025-07-04 16:24:06,911 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8018393402:AAFHD6e25_0ijR26KrtObn4voDqEc9yW93w/getUpdates "HTTP/1.1 200 OK"
