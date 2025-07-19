@@ -36,7 +36,7 @@ CONFIDENCE_THRESHOLD = 0.78
 DUPLICATE_TIME_WINDOW = 10  # seconds
 
 # Telegram config
-BOT_TOKEN = str(os.getenv('TELEGRAM_BOT_TOKEN', '8018393402:AAFHD6e25_0ijR26KrtObn4voDqEc9yW93w'))
+BOT_TOKEN = str(os.getenv('TELEGRAM_BOT_TOKEN', 'YOUR_TOKEN'))
 SUBSCRIPTIONS_FILE = "telegram_subscriptions.json"
 
 # Camera to location map
